@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quản lý Sinh viên</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Quản lý Sinh viên</h1>
+
+    <!-- Thống kê -->
+    <div id="thong-ke">
+      <span>Tổng số: <strong id="tong-so">0</strong></span>
+      &nbsp;|&nbsp;
+      <span>Điểm TB lớp: <strong id="diem-tb">0.00</strong></span>
+    </div>
+
+    <!-- Nút thêm -->
+    <button id="btn-them" onclick="moForm(null)">+ Thêm sinh viên</button>
+
+    <!-- Thông báo -->
+    <div id="thong-bao"></div>
+
+    <!-- Bảng danh sách -->
+    <table>
+      <thead>
+        <tr>
+          <th>Mã SV</th>
+          <th>Họ và tên</th>
+          <th>Ngày sinh</th>
+          <th>Lớp</th>
+          <th>Điểm TB</th>
+          <th>Email</th>
+          <th>Thao tác</th>
+        </tr>
+      </thead>
+      <tbody id="bang-sv"></tbody>
+    </table>
+
+    <!-- Popup Form -->
+    <div id="overlay" style="display: none">
+      <div id="popup">
+        <h2 id="tieu-de-form">Thêm sinh viên</h2>
+
+        <div class="form-group">
+          <label>Mã SV *</label>
+          <input type="text" id="masv" placeholder="VD: SV001" />
+          <span class="loi" id="loi-masv"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Họ và tên *</label>
+          <input type="text" id="hoten" placeholder="Nguyễn Văn A" />
+          <span class="loi" id="loi-hoten"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Ngày sinh *</label>
+          <input type="date" id="ngaysinh" />
+          <span class="loi" id="loi-ngaysinh"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Lớp *</label>
+          <input type="text" id="lop" placeholder="VD: K66A" />
+          <span class="loi" id="loi-lop"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Điểm TB *</label>
+          <input type="number" id="diem" placeholder="0 - 10" step="0.1" min="0" max="10" />
+          <span class="loi" id="loi-diem"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="text" id="email" placeholder="example@email.com" />
+          <span class="loi" id="loi-email"></span>
+        </div>
+
+        <div id="btn-group">
+          <button id="btn-luu" onclick="luuSinhVien()">Lưu</button>
+          <button id="btn-huy" onclick="dongForm()">Hủy</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
