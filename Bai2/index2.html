@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quản lý Công việc</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <h1>Quản lý Công việc Cá nhân</h1>
+
+    <!-- Thống kê -->
+    <div id="thong-ke">
+      <span>Tổng: <strong id="tong-so">0</strong></span>
+      &nbsp;|&nbsp;
+      <span>Đã xong: <strong id="da-xong">0</strong></span>
+      &nbsp;|&nbsp;
+      <span>Chưa xong: <strong id="chua-xong">0</strong></span>
+    </div>
+
+    <!-- Nút thêm -->
+    <button id="btn-them" onclick="moForm(null)">+ Thêm công việc</button>
+
+    <!-- Thông báo -->
+    <div id="thong-bao"></div>
+
+    <!-- Bảng danh sách -->
+    <table>
+      <thead>
+        <tr>
+          <th>Tiêu đề</th>
+          <th>Mô tả</th>
+          <th>Hạn hoàn thành</th>
+          <th>Ưu tiên</th>
+          <th>Trạng thái</th>
+          <th>Thao tác</th>
+        </tr>
+      </thead>
+      <tbody id="bang-cv"></tbody>
+    </table>
+
+    <!-- Popup Form -->
+    <div id="overlay" style="display: none">
+      <div id="popup">
+        <h2 id="tieu-de-form">Thêm công việc</h2>
+
+        <div class="form-group">
+          <label>Tiêu đề *</label>
+          <input type="text" id="tieude" placeholder="Tên công việc" />
+          <span class="loi" id="loi-tieude"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Mô tả</label>
+          <input type="text" id="mota" placeholder="Mô tả ngắn (không bắt buộc)" />
+        </div>
+
+        <div class="form-group">
+          <label>Hạn hoàn thành *</label>
+          <input type="date" id="han" />
+          <span class="loi" id="loi-han"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Mức ưu tiên *</label>
+          <select id="uutien">
+            <option value="">-- Chọn --</option>
+            <option value="Cao">Cao</option>
+            <option value="Trung bình">Trung bình</option>
+            <option value="Thấp">Thấp</option>
+          </select>
+          <span class="loi" id="loi-uutien"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Trạng thái</label>
+          <select id="trangthai">
+            <option value="Chưa xong">Chưa xong</option>
+            <option value="Đã xong">Đã xong</option>
+          </select>
+        </div>
+
+        <div id="btn-group">
+          <button id="btn-luu" onclick="luuCongViec()">Lưu</button>
+          <button id="btn-huy" onclick="dongForm()">Hủy</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app2.js"></script>
+  </body>
+</html>
